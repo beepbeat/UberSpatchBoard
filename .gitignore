@@ -45,5 +45,8 @@ gradle-app.setting
 .nb-gradle/
 
 
-# ====== USB =======
+# ======== USB =========
 usb.yml
+
+# ====== IntelliJ ======
+.idea

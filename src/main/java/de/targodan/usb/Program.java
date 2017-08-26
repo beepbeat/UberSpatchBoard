@@ -44,7 +44,7 @@ import java.util.logging.Logger;
 
 public class Program {
     public static DataConsumer dataConsumer;
-    public static final Version VERSION = Version.parse("v1.0-alpha2");
+    public static final de.targodan.usb.Version VERSION = Version.parse("v1.0-alpha2");
     public static final String CONFIG_FILE = "usb.yml";
     public static final String[] CONTRIBUTORS = new String[] {
         "Your name could be here",

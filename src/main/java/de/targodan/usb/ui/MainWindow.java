@@ -68,13 +68,12 @@ public class MainWindow extends javax.swing.JFrame implements Observer {
     
     private void updateCases() {
         if(this.cm == null) {
-            throw new IllegalStateException("Can't updateCases without a CaseManager.");
+            throw new IllegalStateException("Can't update Cases without a CaseManager.");
         }
         
         this.casePanel.removeAll();
-        this.cm.getCases().forEach(c -> {
-            this.casePanel.add(new CaseView(c));
-        });
+        this.cm.removeClosedCasesOlderThan(LocalDateTime.now().minusMinutes(1));
+        this.cm.getCases().forEach(c -> this.casePanel.add(new CaseView(c)));
         this.revalidate();
         this.repaint();
     }

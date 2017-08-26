@@ -82,9 +82,7 @@ public class CaseManager extends Observable {
     }
     
     public void removeClosedCasesOlderThan(LocalDateTime closeTime) {
-        // TODO: Check if < 0 is correct
-        this.closedCases.removeIf(item -> item.getCloseTime().compareTo(closeTime) < 0);
-        
+        this.closedCases.removeIf(item -> item.getCloseTime().isBefore(closeTime));
         this.setChanged();
         this.notifyObservers();
     }
